@@ -1,0 +1,30 @@
+<div>
+  <h3>Artists</h3>
+
+<!--   <select name=”artistSelect” id=”” ng-model=”selectedArtist” ng-options=”artist.name for artist in artists”>
+  </select>
+  <select name=”turtleSelect” id=”” ng-model=”selectedTurtle” ng-options=”selectVal as
+  displayLabel for objectAlias in someScopeArray”>
+  </select> -->
+<!--   <div>
+  <input ng-model="{{ artist.name }}">{{ artist.name }}
+  </div> -->
+
+
+  <div class="list-group">
+  <input ng-model="artist.name">
+    <div ng-repeat="artist in artists | filter: {name: artist.name}">
+        <a ui-sref="artist({artistId: artist.id})">{{ artist.name }}</a>
+    </div>
+  </div>
+</div>
+
+
+<!--   <div class="list-group">
+  <input ng-model="{{ artist.name }}">
+    <div class="list-group-item" ng-repeat="artist in artists">
+        <a ui-sref="artist({artistId: artist.id})">{{ artist.name }}</a>
+    </div>
+  </div>
+</div>
+ -->

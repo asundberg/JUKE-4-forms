@@ -1,0 +1,26 @@
+<div class="well">
+  <form class="form-horizontal" name="makePlaylist" ng-submit="submit()">
+    <!-- ng-submit="submit()" -->
+    <fieldset>
+      <legend>New Playlist</legend>
+      <div class="alert alert-warning" ng-show="makePlaylist.playlistName.$error.required">Please enter a name</div>
+      <div class="form-group">
+        <label class="col-xs-2 control-label">Name</label>
+        <div class="col-xs-10">
+          <input class="form-control" type="text" ng-required="true" maxlength="16" ng-model="newPlaylist.name" name="playlistName">
+          <!-- I don't understand the above - how do I use ng-model="newPlaylist.name" name="playlistName"??? -->
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-10 col-xs-offset-2">
+          <button type="submit" class="btn btn-success" ng-disabled="makePlaylist.playlistName.$invalid">Create Playlist</button>
+          <!-- ng-click="submit()" -->
+          {{makePlaylist.newPlaylist}}
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+
+<!-- First off, we'll need to name the form so we can interact with it via the $scope (and template). Then we'll want to base the submit button's disabled status off of the form's validity... -->
